@@ -2,8 +2,10 @@
 const express = require('express');
 const { Food } = require('../models/index');
 const foodRouter = express.Router();
+// const validator = require('../middleware/validator');
 
 foodRouter.get('/food', getFoods);
+// app.get("/food", validator, (req, res) => {getFoods});
 foodRouter.get('/food/:id', getOneFood);
 foodRouter.post('/food', addOneFood);
 foodRouter.put('/food/:id', updateFood);
@@ -45,6 +47,3 @@ async function deleteFood(req, res) {
   }
 }
 module.exports = foodRouter;
-
-
-

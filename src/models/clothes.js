@@ -1,5 +1,6 @@
 "use strict";
 
+// Our table schema
 const Clothes = (sequelize, DataTypes) =>
     sequelize.define("clothe", {
         clotheName: {

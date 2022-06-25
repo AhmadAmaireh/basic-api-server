@@ -2,12 +2,14 @@
 const express = require("express");
 const { Clothes } = require("../models/index");
 const ClothesRouter = express.Router();
+// const validator = require('../middleware/validator');
 
 ClothesRouter.get("/clothes", getClothes);
 ClothesRouter.get("/clothes/:id", getOneClothes);
 ClothesRouter.post("/clothes", createClothes);
 ClothesRouter.put("/clothes/:id", updateClothes);
 ClothesRouter.delete("/clothes/:id", deleteClothes);
+// app.get("/clothe", validator, (req, res) => {getclothe});
 async function getClothes(req, res) {
   const allClothes = await Clothes.findAll();
   res.status(200).json(allClothes);
